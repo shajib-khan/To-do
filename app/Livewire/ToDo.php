@@ -18,6 +18,11 @@ class ToDo extends Component
         ]);
         $this->todo_add="";
     }
+    public function DeleteTodo($id)
+    {
+        ModelTodo::find($id)->delete();
+        return redirect()->back()->with('message', 'Successfully comment Deleted');
+    }
 
 
     public function render()
@@ -26,3 +31,5 @@ class ToDo extends Component
         return view('livewire.to-do', compact('alltodos'));
     }
 }
+// public function deleteComment($id)
+

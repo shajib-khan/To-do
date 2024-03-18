@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\ToDo;
+use App\Livewire\EditPost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-ROute::get('/', ToDo::class)->name('to-do');
+Route::get('/', ToDo::class)->name('to-do');
+Route::get('edit-post/{id}', EditPost::class)->name('edit.post');
