@@ -7,9 +7,10 @@ use Livewire\Component;
 class EditPost extends Component
 {
 
-  
+
     public function render()
     {
-        return view('livewire.edit-post');
+        $alltodos = ModelTodo::latest()->simplePaginate(3);
+        return view('livewire.edit-post', compact('alltodos'));
     }
 }

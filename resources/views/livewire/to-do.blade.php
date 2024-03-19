@@ -22,7 +22,7 @@
                         <td><p>Create {{ $alltodo->created_at }}</p></td>
                         <td><p>Update {{ $alltodo->updated_at }}</p></td>
                         <td><a class="btn btn-danger" wire:click="DeleteTodo({{ $alltodo['id'] }})">Delete</a></td>
-                        <td><a class="btn btn-danger" wire:navigate href="{{ route('edit.post', ['id']) }}">edit</a></td>
+                        <td><a class="btn btn-danger" wire:navigate ="EditPost" href="{{ route('edit.post', ['id'=>$alltodo->id]) }}">edit</a></td>
                     </li>
                 </ul>
             </td>
