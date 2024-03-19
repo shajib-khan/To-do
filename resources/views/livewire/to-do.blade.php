@@ -6,12 +6,14 @@
         {{ session()->get('message') }}
     </div>
 @endif
-    <input type="text"wire:model="todo_add" placeholder="Add your to do">
+    <input type="text"wire:model.live="todo_add" placeholder="Add your to do">
+
     @error('todo_add')
     <div class="alert alert-danger">{{ $message }}</div>
 
     @enderror
     <button class="btn btn-primary">Add Todo</button>
+   
    </form>
    @forelse ($alltodos as $alltodo )
             <td>

@@ -6,6 +6,15 @@ use Livewire\Component;
 
 class EditPost extends Component
 {
+    public $ModelTodo;
+    public $edit_add;
+    public function mount($id)
+    {
+
+    }
+    public function EditTodo()
+    {
+    }
 
 
     public function render()

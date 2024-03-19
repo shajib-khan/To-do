@@ -16,7 +16,7 @@ class ToDo extends Component
             'todo'=> $this->todo_add
 
         ]);
-        $this->todo_add="";
+        
     }
     public function DeleteTodo($id)
     {
