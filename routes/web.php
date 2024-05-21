@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', ToDo::class)->name('todo');
 Route::get('edit-post/{id}', EditPost::class)->name('edit.post');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
