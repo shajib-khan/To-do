@@ -6,22 +6,27 @@ use Livewire\Component;
 
 class ToDo extends Component
 {
-    public $todo_add;
+    public $todoAdd = '';
+    public function save()
+    {
+
+    }
     public function addtodo()
     {
         $this->validate([
-            "todo_add"=> "required"
+            "todoAdd"=> "required"
         ]);
         ModelTodo::create([
-            'todo'=> $this->todo_add
+            'todo'=> $this->todoAdd
 
         ]);
-        
+        $this->reset();
+        session()->flash('newTodoAdded', 'New Todo successfully Added.');
     }
     public function DeleteTodo($id)
     {
         ModelTodo::find($id)->delete();
-        return redirect()->back()->with('message', 'Successfully comment Deleted');
+        session()->flash('delete', 'Successfully Todo Deleted');
     }
 
 

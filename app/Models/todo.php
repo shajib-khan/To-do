@@ -10,6 +10,7 @@ class todo extends Model
     use HasFactory;
     protected $fillable = [
         'todo',
+        'status'
 
     ];
 }

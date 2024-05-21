@@ -6,19 +6,25 @@ use Livewire\Component;
 
 class EditPost extends Component
 {
-    public $ModelTodo;
     public $todo;
-    
-    public function update()
+    public $id;
+
+
+    public function mount($id){
+        $model=ModelTodo::find($id);
+        $this->todo = $model->todo;
+    }
+
+
+    public function EditTodo()
     {
-        $ModelTodo = ModelTodo::find($this->id);
+        $model = ModelTodo::find($this->id);
 
-        $ModelTodo->update([
+        $model->update([
             'todo' => $this->todo,
-
         ]);
-
-        session()->flash('message', 'Post updated successfully!');
+        $this->reset();
+        session()->flash('editTodo', 'Todo  successfully updated!');
     }
 
     public function render()
